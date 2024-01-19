@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+		<table th:if = "${rating != null}">
+			<tr>
+				<th>Rating Number</th>
+				<th>Rating Text</th>
+				<th>Title</th>
+				<th>Publish Year</th>
+			</tr>
+			
+			<tr>
+				<td th:text= "${rating.getRatingNumber()}"></td>
+				<td th:text= "${rating.getRatingText()}"></td>
+				<td th:text= "${rating.getTitle()}"></td>
+				<td th:text= "${rating.getPublishYear()}"></td>
+			</tr>
+		</table>
+		<p th:if = "${rating == null}">No match</p>
+	</body>
+</html>

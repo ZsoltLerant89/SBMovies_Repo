@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Movie list</title>
+	</head>
+	<body>
+		<table>
+		<tr>
+			<th>ID</a></th>
+			<th><a th:href="'/movies/abc?order=' + ${order.getOrder()}">Title</a></th>
+			<th>Publish Year</th>
+			<th>Genre</th>
+		</tr>
+		
+		<tr th:each = "movie:${movies}">
+			<td ><a th:href="'/movies/movie/' + ${movie.getId()}" th:text= "${movie.getId()}" ></a></td>
+			<td th:text="${movie.getTitle()}"></td>
+			<td th:text="${movie.getPublishYear()}"></td>
+			<td th:text="${movie.getGenre()}"></td>
+		</tr>
+			
+		</table>
+		
+		<table th:if= "${ratings != null}">
+			<tr>
+				<th>Rating Number </th>
+				<th>Rating Text </th>
+				<th>Title </th>
+				<th>Publish Year </th>
+				<th>Genre</th>
+			</tr>
+			
+			<tr th:each = "rating:${ratings}">
+				<td th:text="${rating.getRatingNumber()}"></td>
+				<td th:text="${rating.getRatingText()}"></td>
+				<td th:text="${rating.getTitle()}"></td>
+				<td th:text="${rating.getPublishYear()}"></td>
+				<td th:text="${rating.getGenre()}"></td>
+			</tr>
+		</table>
+		<br>
+		
+		
+		<br><br>
+		<div>Add new rating</div>
+		<br>
+		<form action="/movies/addnewrating" method="post">
+			<select name="movieId">
+				<option>Select</option>
+			    <option th:each = "movie:${movies}" th:value="${movie.getId()}" th:text="${movie.getTitle()}" ></option>
+			</select>
+			<p>Rating number</p>
+			<input type="number" name="ratingNumber" required/>
+			<p>Rating text</p>
+			<input type="text" name="ratingText" required/>
+			<br>
+			<br>
+			<input type="submit" value="Save"/>
+			<br><br>
+		</form>	
+		
+		
+		<form action="/movies/deleteallfrommovies" method="post">
+			<input type="submit" value="Delete all movies" />
+		</form>
+				
+		<br>
+		<br>
+		<a href="/">Back to index page</a>
+		
+	</body>
+	
+</html>

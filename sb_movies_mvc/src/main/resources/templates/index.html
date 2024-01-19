@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Index HTML</title>
+	</head>
+	<body>
+		<!-- #1. -->
+		<h3>#1. Show a movie:</h3>
+		<form action= "/movie" method= "get">
+			<p>Movie ID</p>
+			<input type= "text" name= "mid" />
+			<br/>
+			<br/>
+			<input type= "submit" value= "Show" />
+		</form>
+		
+		<br/><br/>
+		
+		<!-- #2. -->
+		<h3>#2. Show a rating:</h3>
+		<form action= "/movie/rating" method= "get">
+			<p>Rating ID</p>
+			<input type= "number" name= "rid" />
+			<br/>
+			<br/>
+			<input type= "submit" value= "Show" />
+		</form>
+		
+		<br/><br/>
+		
+		<!-- #3. -->
+		<h3>#3. Save a movie </h3>
+		<form action= "/movie/save" method="post">
+			<p>Title</p>
+			<input type= "text" name="title" />
+			<p>Publish Year</p>
+			<input type="number" name="pyear" />
+			<br/>
+			<br/>
+			<input type= "submit" value="Save" />
+		</form>
+		
+		<br/><br/>
+		
+		<!-- #4. -->
+		<h3>#4. Update a movie name</h3>
+		<form action="/movie/update" method="post">
+			<p>Movie ID</p>
+			<input type= "number" name="mid" />
+			<p>Title</p>
+			<input type="text" name="title" />
+			<br/>
+			<br/>
+			<input type="submit" value="Update" />
+		</form>
+		
+		<br/><br/>
+		
+		<!-- #5. -->
+		<h3>#5. Update a rating</h3>
+		<form action="/movie/ratingupdate" method="post">
+			<p>Rating ID</p>
+			<input type="number" name="ratingid" />
+			<p>Rating Number</p>
+			<input type="number" name="ratingnumber" />
+			<p>Rating Text</p> 
+			<input type="text" name="ratingtext" />
+			<br/>
+			<br/>
+			<input type="submit" value="Update" />
+		</form>
+		
+		<br/><br/>
+		
+		<!-- #6. -->
+		<h3>#6. Remove a rating</h3>
+		<form action="/rating/remove" method="post">
+			<p>Rating ID</p>
+			<input type="number" name="ratingid" />
+			<br/>
+			<br/>
+			<input type="submit" value="Remove" />		
+		</form>
+		
+		<br/><br/>
+		
+		<!-- #7. -->
+		<h3>#7. Update genre</h3>
+		<form action="/movie/updategenre" method="post">
+			<p>Rating ID</p>
+			<input type="number" name="ratingid" />
+			<p>Title</p>
+			<input type="text" name="title" />
+			<p>Genre</p>
+			<input type="text" name="genre" />
+			<br/>
+			<br/>
+			<input type="submit" value="Update" />
+		</form>
+		
+		<br/><br/>
+		
+		<h3>#8 Show all movies</h3>
+		<form action="/movies" method="get">
+			<input type="submit" value="Show" />
+		</form>
+		
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<div th:if= "${movie} != null">
+			<a th:href="'/movie?mid=' + ${movie.getId()}" th:text= "${movie.getId()}"></a>
+			<p th:text= "${movie.getTitle()}"></p>
+			<p th:text= "${movie.getPublishYear()}"></p>
+			<p th:text= "${movie.getGenre()}"></p>			
+		</div>
+		<div th:if= "${movies} != null">
+			<p th:if= "${movies.isEmpty()} ">Database is empty!</p>
+			<a href="/movies">Back to movies page</a>
+		</div>
+	</body>
+</html>
